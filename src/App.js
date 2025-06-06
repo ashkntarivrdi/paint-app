@@ -8,14 +8,20 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 export default function App() {
   const [shapes, setShapes] = useState([]);
+  const [title, setTitle] = useState("untitled");
 
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="app-container">
-        <Header shapes={shapes} setShapes={setShapes} />
+        <Header
+          shapes={shapes}
+          setShapes={setShapes}
+          title={title}
+          setTitle={setTitle}
+        />
         <div className="main">
-          <Sidebar />
           <Canvas shapes={shapes} setShapes={setShapes} />
+          <Sidebar />
         </div>
         <ShapeCounter shapes={shapes} />
       </div>

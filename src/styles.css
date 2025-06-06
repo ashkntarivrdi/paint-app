@@ -42,11 +42,24 @@ body {
 .sidebar {
   width: 150px;
   background: #ddd;
+
+  /* ✅ These three lines are the magic */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align shapes to top */
+
   padding: 10px;
 }
+
+.sidebar > div {
+  display: flex;
+  flex-direction: row;      /* Put shapes in a row */
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;          /* Allows wrapping if needed */
+}
+
 
 .shape-btn {
   background: white;

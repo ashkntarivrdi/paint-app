@@ -18,13 +18,43 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative; /* Ensure proper positioning for the button container */
+}
+
+.header-buttons {
+  display: flex;
+  flex-direction: row; /* Align buttons horizontally */
+  position: absolute;
+  right: 2vw; /* Adjust as needed for spacing */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  gap: 0.5rem; /* Space between buttons */
+}
+
+.header-buttons button,
+.header-buttons .import-label {
+  display: block;
+  padding: 0.5rem 1rem; /* Responsive padding */
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #61dafb;
+  color: black;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.header-buttons button:hover,
+.header-buttons .import-label:hover {
+  background-color: #21a1f1; /* Slightly darker blue on hover */
 }
 
 .title-input {
   font-size: 1.2rem;
-  padding: 5px 10px;
-  width: 200px;
-  max-width: 50vw;
+  padding: 0.5rem 1rem;
+  flex: 1; /* Allow the input to grow if needed */
+  max-width: 200px; /* Prevent it from becoming too large */
+  min-width: 150px; /* Prevent it from becoming too small */
 }
 
 .import-label {

@@ -27,11 +27,13 @@ export default function Header({ shapes, setShapes, title, setTitle }) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button onClick={exportJSON}>Export</button>
-      <label className="import-label">
-        Import
-        <input type="file" accept=".json" onChange={importJSON} hidden />
-      </label>
+      <div className="header-buttons">
+        <label className="import-label">
+          Import
+          <input type="file" accept=".json" onChange={importJSON} hidden />
+        </label>
+        <button onClick={exportJSON}>Export</button>
+      </div>
     </div>
   );
 }

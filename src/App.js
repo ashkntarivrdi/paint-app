@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Canvas from "./components/Canvas";
+import ShapeCounter from "./components/ShapeCounter";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-function App() {
+export default function App() {
+  const [shapes, setShapes] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div className="app-container">
+        <Header shapes={shapes} setShapes={setShapes} />
+        <div className="main">
+          <Sidebar />
+          <Canvas shapes={shapes} setShapes={setShapes} />
+        </div>
+        <ShapeCounter shapes={shapes} />
+      </div>
+    </DndProvider>
   );
 }
-
-export default App;

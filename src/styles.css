@@ -73,7 +73,6 @@ body {
   overflow: hidden;
 }
 
-/* ✅ Responsive sidebar */
 .sidebar {
   width: 10vw;
   max-width: 200px;

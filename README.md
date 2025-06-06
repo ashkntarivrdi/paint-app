@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# مستندات پروژه نقاشی با React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+این پروژه یک برنامه نقاشی ساده است که با استفاده از کتابخانه React و قابلیت Drag and Drop پیاده‌سازی شده است. در این برنامه، کاربران می‌توانند اشکال مختلفی را به بوم نقاشی اضافه کنند، آن‌ها را جابه‌جا کنند، اندازه آن‌ها را تغییر دهند و در نهایت نقاشی خود را ذخیره یا بارگذاری کنند.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ساختار فایل‌ها و پوشه‌ها
 
-### `npm start`
+### 1. `src/App.js`
+این فایل اصلی‌ترین کامپوننت برنامه است که ساختار کلی برنامه را تعریف می‌کند. این کامپوننت شامل بخش‌های زیر است:
+- **Header**: برای نمایش عنوان و دکمه‌های Import و Export.
+- **Sidebar**: برای نمایش اشکال قابل کشیدن.
+- **Canvas**: بوم نقاشی که اشکال روی آن قرار می‌گیرند.
+- **ShapeCounter**: شمارنده‌ای که تعداد هر نوع شکل را نمایش می‌دهد.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. `src/components/Header.js`
+این کامپوننت شامل موارد زیر است:
+- **عنوان (Title)**: کاربر می‌تواند عنوان نقاشی خود را وارد کند.
+- **دکمه Import**: برای بارگذاری نقاشی از یک فایل JSON.
+- **دکمه Export**: برای ذخیره نقاشی به صورت فایل JSON.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. `src/components/Sidebar.js`
+این کامپوننت شامل اشکال مختلفی است که کاربر می‌تواند آن‌ها را به بوم نقاشی بکشد. هر شکل با استفاده از قابلیت Drag and Drop قابل جابه‌جایی است.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. `src/components/Canvas.js`
+این کامپوننت بوم نقاشی را نمایش می‌دهد و شامل قابلیت‌های زیر است:
+- افزودن اشکال به بوم با کشیدن آن‌ها از Sidebar.
+- جابه‌جایی اشکال روی بوم.
+- تغییر اندازه اشکال با استفاده از دستگیره تغییر اندازه.
+- حذف اشکال با دوبار کلیک روی آن‌ها.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 5. `src/components/ShapeCounter.js`
+این کامپوننت تعداد هر نوع شکل (دایره، مربع، مثلث) را که روی بوم قرار دارد، نمایش می‌دهد.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 6. `src/styles.css`
+این فایل شامل استایل‌های CSS برای طراحی و چیدمان بخش‌های مختلف برنامه است. برخی از ویژگی‌های مهم:
+- **استایل بوم نقاشی**: تنظیم اندازه و موقعیت اشکال.
+- **استایل Sidebar**: نمایش اشکال به صورت دکمه‌های قابل کشیدن.
+- **استایل Header**: چیدمان دکمه‌های Import و Export و ورودی عنوان.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 7. `src/index.js`
+این فایل نقطه ورود برنامه است که کامپوننت اصلی `App` را در DOM رندر می‌کند.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## قابلیت‌های برنامه
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **افزودن اشکال به بوم**: کاربر می‌تواند اشکال دایره، مربع و مثلث را از Sidebar به بوم بکشد.
+2. **جابه‌جایی اشکال**: اشکال روی بوم قابل جابه‌جایی هستند.
+3. **تغییر اندازه اشکال**: کاربر می‌تواند اندازه اشکال را با کشیدن دستگیره تغییر اندازه، تغییر دهد.
+4. **حذف اشکال**: با دوبار کلیک روی هر شکل، آن شکل حذف می‌شود.
+5. **ذخیره نقاشی**: کاربر می‌تواند نقاشی خود را به صورت فایل JSON ذخیره کند.
+6. **بارگذاری نقاشی**: کاربر می‌تواند نقاشی ذخیره‌شده را از فایل JSON بارگذاری کند.
+7. **شمارش اشکال**: تعداد هر نوع شکل در بخش پایین صفحه نمایش داده می‌شود.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## نحوه اجرا
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. ابتدا با دستور زیر وابستگی‌ها را نصب کنید:
+   ```bash
+   npm install
+   ```
+2. سپس برنامه را با دستور زیر اجرا کنید:
+    ```bash
+    npm start
+    ```
 
-### Analyzing the Bundle Size
+## وابستگی‌ها
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React: برای ساخت رابط کاربری.
+- React DnD: برای پیاده‌سازی قابلیت Drag and Drop.
+- CSS: برای طراحی و استایل‌دهی.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -141,6 +141,36 @@ body {
   text-align: center;
   border-top: 1px solid #ccc;
   font-size: 1rem;
+  display: flex; /* Use flexbox for counter items */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between counter items */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.counter-item {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between shape preview and count number */
+}
+
+.counter-shape-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc; /* Add a slight border around the shape preview */
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 2px; /* Small padding inside the container */
+}
+
+.counter-shape-preview {
+  border: 1px solid black; /* Thinner border for small shapes */
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.counter-shape-preview.circle {
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
